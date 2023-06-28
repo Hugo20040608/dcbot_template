@@ -6,6 +6,7 @@ const fs = require("fs");
 // 載入 .env 檔案裡面的環境變數
 require("dotenv").config();
 
+
 // 建立一個新的 Client
 const client = new Client({
     intents: [GatewayIntentBits.Guilds],

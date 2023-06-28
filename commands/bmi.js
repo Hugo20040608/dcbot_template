@@ -18,7 +18,7 @@ module.exports = {
         let weight = interaction.options.getNumber("體重");
         let bmi = weight / (height * height);
         await interaction.reply(`${bmi}`);
-        /*
+        
         if (bmi < 18.5) {
             await interaction.reply(`體重過輕 bmi=${bmi}`);
         } else if (bmi >= 18.5 && bmi < 24) {
@@ -26,6 +26,6 @@ module.exports = {
         } else {
             await interaction.reply(`體重過重 bmi=${bmi}`);
         }
-        */
+        
     },
 };

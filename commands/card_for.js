@@ -24,10 +24,24 @@ module.exports = {
         const b = [5, 8, 9, 7, 4]; // 這就是利奧拉手上的牌(寬)了
         let c = interaction.options.getNumber("長_史考特"); // 已經幫你們宣告好變數了，這裡不需要改
         let d = interaction.options.getNumber("寬_史考特"); // 已經幫你們宣告好變數了，這裡不需要改
-
+        const num = new Array();
         //好像應該有一個迴圈?
-        let reply = compare3(); //如何判斷牌的大小
+        await interaction.reply(`Hi, Here is the answer`);
+        for(let i=0;i<5;i++)
+        {
+            const result = a[i]*b[i] - c*d;
+            num.push(`利奧拉的牌比史考特${result > 0 ? '大' : '小'} ${Math.abs(result)}`)
+            // await interaction.followUp(`利奧拉的牌比史考特大${a[i]*b[i] - c*d}`);
+        }
+        let replyStr = ''
+        num.forEach(str =>{
+            replyStr += str + '\n'
+        })
+        await interaction.followUp(replyStr);
 
-        await interaction.reply(`${reply}`);
+        // await interaction.reply(`利奧拉的牌比史考特大${[...num]}`);
+        // let reply = compare3(); //如何判斷牌的大小
+
+        // await interaction.reply(`${reply}`);
     },
 };
